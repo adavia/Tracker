@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root "projects#index"
 
+  devise_for :users
+
   namespace :admin do
     root "application#index"
 
     resources :projects, only: [:new, :create, :destroy]
-  end
 
-  devise_for :users
+    resources :users
+  end
   
   resources :projects, only: [:index, :show, :edit, :update] do
     resources :tickets
