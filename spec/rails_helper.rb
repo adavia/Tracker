@@ -49,6 +49,8 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
+  config.use_transactional_fixtures = false
+
   config.include Warden::Test::Helpers, type: :feature
   config.after(type: :feature) { Warden.test_reset! }
 end
