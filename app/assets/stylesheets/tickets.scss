@@ -33,6 +33,21 @@ blockquote.comment p {
   padding-bottom: 10px;
 }
 
+.tag {
+  @extend .state;
+  @extend .label-info;
+  margin-right: 10px;
+  a {
+    color: white;
+    a.remove {
+      font-family: "FontAwesome";
+      @extend .fa-close;
+      margin-right: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
+
 .upload-area .alert {
   position: relative;
 }
