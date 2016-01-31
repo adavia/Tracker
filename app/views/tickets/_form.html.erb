@@ -1,9 +1,12 @@
 <%= simple_form_for([project, ticket]) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :attachment, as: :file, label: "File" %>
-  <%= f.input :attachment_cache %>
-  <%= f.input :attachment_cache, as: :hidden %>
+
+  <h3>Attachments</h3>
+  <%= f.simple_fields_for :attachments do |attachment| %>
+    <%= attachment.input :file, as: :file, label: "File ##{attachment.index + 1}" %>
+    <%= attachment.input :file_cache, as: :hidden %>
+  <% end %>
   
   <%= f.button :submit, class: "btn-primary" %>
 <% end %>
