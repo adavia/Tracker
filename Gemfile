@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.4.1'
 # Access control
 gem 'pundit', '~> 0.3.0'
+# Upload files
+gem 'carrierwave', '~> 0.10.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
