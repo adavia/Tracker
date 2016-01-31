@@ -69,3 +69,7 @@ a.delete {
     @extend .fa-trash;
   }
 }
+
+#tickets li, #states li {
+  padding-bottom: 10px;
+}
