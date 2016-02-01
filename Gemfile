@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -71,8 +72,10 @@ end
 
 group :production do
   # Use Postgres as the database for Active Record
-  gem "pg"
+  gem 'pg'
   # Configuration settings
   gem 'rails_12factor'
+  # Use puma web server
+  gem 'puma'
 end
 
