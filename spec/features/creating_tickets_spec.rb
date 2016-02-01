@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Users can create new tickets" do
-  let(:user) { FactoryGirl.create(:user) }
   let!(:state) { FactoryGirl.create :state, name: "New", default: true }
+  let(:user) { FactoryGirl.create(:user) }
 
   before do
     login_as(user)
@@ -20,7 +20,6 @@ RSpec.feature "Users can create new tickets" do
 
     expect(page).to have_content "Ticket has been created."
     expect(page).to have_content "State: New"
-
     within("#ticket") do
       expect(page).to have_content "Author: #{user.email}"
     end
@@ -37,14 +36,12 @@ RSpec.feature "Users can create new tickets" do
   scenario "with an invalid description" do
     fill_in "Name", with: "Non-standards compliance"
     fill_in "Description", with: "It sucks"
-
     click_button "Create Ticket"
 
     expect(page).to have_content "Ticket has not been created."
     expect(page).to have_content "Description is too short"
   end
 
-<<<<<<< HEAD
   scenario "with multiple attachments", js: true do
     fill_in "Name", with: "Add documentation for blink tag"
     fill_in "Description", with: "Blink tag's speed attribute"
@@ -53,17 +50,10 @@ RSpec.feature "Users can create new tickets" do
     click_link "Add another file"
 
     attach_file "File #2", Rails.root.join("spec/fixtures/spin.txt")
-=======
-  scenario "with an attachment" do
-    fill_in "Name", with: "Add documentation for blink tag"
-    fill_in "Description", with: "The blink tag has a speed attribute"
-    attach_file "File", "spec/fixtures/speed.txt"
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
     click_button "Create Ticket"
 
     expect(page).to have_content "Ticket has been created."
-    
-<<<<<<< HEAD
+
     within("#ticket .attachments") do
       expect(page).to have_content "speed.txt"
       expect(page).to have_content "spin.txt"
@@ -88,15 +78,11 @@ RSpec.feature "Users can create new tickets" do
     fill_in "Description", with: "My pages are ugly!"
     fill_in "Tags", with: "browser visual"
     click_button "Create Ticket"
-    
+
     expect(page).to have_content "Ticket has been created."
     within("#ticket #tags") do
       expect(page).to have_content "browser"
       expect(page).to have_content "visual"
-=======
-    within("#ticket .attachment") do
-      expect(page).to have_content "speed.txt"
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
     end
   end
 end

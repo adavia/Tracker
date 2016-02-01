@@ -13,12 +13,8 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-<<<<<<< HEAD
     Rails.root.join "uploads/#{model.class.to_s.underscore}/" + \
       "#{mounted_as}/#{model.id}"
-=======
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

@@ -23,11 +23,8 @@ gem 'devise', '~> 3.4.1'
 gem 'pundit', '~> 0.3.0'
 # Upload files
 gem 'carrierwave', '~> 0.10.0'
-<<<<<<< HEAD
 # Perform great searches
 gem 'searcher', github: 'radar/searcher'
-=======
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
