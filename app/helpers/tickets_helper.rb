@@ -1,6 +1,6 @@
 module TicketsHelper
   def state_transition_for(comment)
-    if comment.previous_state != comment.state
+    if comment.previous_state != comment.state && comment.state.present?
       content_tag(:p) do
         value = "<strong><i class='fa fa-gear'></i> state changed</strong>"
         if comment.previous_state.present?
