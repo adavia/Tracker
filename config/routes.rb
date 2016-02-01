@@ -47,6 +47,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # API routing
+  namespace :api do
+    resources :projects, only: [] do
+      resources :tickets
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

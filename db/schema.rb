@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160131201544) do
+ActiveRecord::Schema.define(version: 20160201163853) do
 
   create_table "attachments", force: :cascade do |t|
     t.string   "file"
@@ -36,9 +35,6 @@ ActiveRecord::Schema.define(version: 20160131201544) do
   add_index "comments", ["author_id"], name: "index_comments_on_author_id"
   add_index "comments", ["previous_state_id"], name: "index_comments_on_previous_state_id"
   add_index "comments", ["ticket_id"], name: "index_comments_on_ticket_id"
-=======
-ActiveRecord::Schema.define(version: 20160131002843) do
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -91,11 +87,7 @@ ActiveRecord::Schema.define(version: 20160131002843) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "author_id"
-<<<<<<< HEAD
     t.integer  "state_id"
-=======
-    t.string   "attachment"
->>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
   end
 
   add_index "tickets", ["author_id"], name: "index_tickets_on_author_id"
@@ -117,8 +109,10 @@ ActiveRecord::Schema.define(version: 20160131002843) do
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
     t.datetime "archived_at"
+    t.string   "api_key"
   end
 
+  add_index "users", ["api_key"], name: "index_users_on_api_key"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
