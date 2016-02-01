@@ -15,6 +15,7 @@ class Ticket < ActiveRecord::Base
   validates :description, presence: true
   validates :description, presence: true, length: { minimum: 10 }
 
+<<<<<<< HEAD
   before_create :assign_default_state
   after_create :author_watches_me
 
@@ -40,4 +41,7 @@ class Ticket < ActiveRecord::Base
         self.watchers << author
       end
     end
+=======
+  mount_uploader :attachment, AttachmentUploader
+>>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
 end

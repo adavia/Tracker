@@ -50,6 +50,7 @@
 
   <%= simple_format(@ticket.description) %>
 
+<<<<<<< HEAD
   <% if @ticket.attachments.any? %>
     <h4>Attachments</h4>
     <div class="attachments">
@@ -79,3 +80,16 @@
 <% if policy(@comment).create? %>
   <%= render "comments/form", ticket: @ticket, comment: @comment %>
 <% end %>
+=======
+  <% if @ticket.attachment.present? %>
+    <h4>Attachment</h4>
+    <div class="attachment">
+      <p>
+        <%= link_to File.basename(@ticket.attachment.url),
+          @ticket.attachment.url %>
+          (<%= number_to_human_size(@ticket.attachment.size) %>)
+      </p>
+    </div>
+  <% end %>
+</div>
+>>>>>>> 1fe3ca34fe375c1f3f5d4246d8dc1d5afcc3fde6
