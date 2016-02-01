@@ -3,5 +3,4 @@ class TicketSerializer < ActiveModel::Serializer
     :updated_at, :author_id, :state_id
 
   has_one :state
-  has_many :comments
 end
