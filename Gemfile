@@ -24,6 +24,8 @@ gem 'pundit', '~> 0.3.0'
 gem 'carrierwave', '~> 0.10.0'
 # Perform great searches
 gem 'searcher', github: 'radar/searcher'
+# Add active model serializer gem
+gem 'active_model_serializers', '~> 0.9.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
